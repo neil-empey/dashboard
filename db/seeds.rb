@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Device.create(name: "Front Door", state: 0)
+
+Device.create(name: "Neils Door", state: 0)
+
+Device.create(name: "Room Window", state: 0)

@@ -6,7 +6,7 @@ class DevicesController < ApplicationController
   end
 
   def show
-    device = Device.find_by_name(params[:name])
+    device = Device.find_by_id(params[:id])
     render json: device
   end
 
@@ -20,9 +20,9 @@ class DevicesController < ApplicationController
   end
 
   def update
-    device = Device.find_by_name(params[:name])
+    device = Device.find_by_id(params[:id])
     if device
-      device.update(:state += 1)
+      device.state += 1
       render json: device, status: 200
     else
       render json: { error: 'Unable to change state' }, status: 400
@@ -30,7 +30,7 @@ class DevicesController < ApplicationController
   end
 
   def destroy
-    device = Device.find_by_name(params[:name])
+    device = Device.find_by_id(params[:id])
     if device
       device.destroy
       render json: device, status: 200
