@@ -23,6 +23,7 @@ class DevicesController < ApplicationController
     device = Device.find_by_id(params[:id])
     if device
       device.state += 1
+      device.save
       render json: device, status: 200
     else
       render json: { error: 'Unable to change state' }, status: 400
