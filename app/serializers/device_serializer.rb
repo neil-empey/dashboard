@@ -1,3 +1,3 @@
 class DeviceSerializer < ActiveModel::Serializer
-  attributes :id, :state
+  attributes :state
 end
