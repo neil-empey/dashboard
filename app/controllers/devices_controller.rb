@@ -20,7 +20,7 @@ class DevicesController < ApplicationController
   end
 
   def frontdoor
-    device = Device.find_by_id(params[:id])
+    device = Device.find_by_id(1)
     if device
       device.state += 1
       device.save
