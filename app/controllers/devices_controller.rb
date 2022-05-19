@@ -24,7 +24,7 @@ class DevicesController < ApplicationController
     if device
       device.state += 1
       device.save
-      render json: "state": device.state, status: 200
+      render { "state": device.state }
     else
       render json: { error: 'Unable to change state' }, status: 400
     end
