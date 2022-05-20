@@ -22,11 +22,9 @@ class DevicesController < ApplicationController
   def frontdoor
     device = Device.find_by_id(1)
     if device
-      device.state += 1
-      device.save
       render json: device
     else
-      render json: { error: 'Unable to change state' }, status: 400
+      render json: { error: 'Cannot read device state' }, status: 400
     end
   end
 
