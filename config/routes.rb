@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get '/devices', to: 'devices#index'
   get '/devices/:id', to: 'devices#update'
   get '/device/1', to: 'devices#frontdoor'
+  get '/frontdoor', to: 'devices#frontMotion'
 
 end

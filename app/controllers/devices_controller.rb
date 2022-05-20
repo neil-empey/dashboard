@@ -19,6 +19,14 @@ class DevicesController < ApplicationController
     end
   end
 
+  def frontMotion
+    device = Device.find_by_id(1)
+    if device
+      device.state += 1
+      device.save
+    end
+  end
+
   def frontdoor
     device = Device.find_by_id(1)
     if device
