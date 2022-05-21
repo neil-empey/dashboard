@@ -19,11 +19,30 @@ class DevicesController < ApplicationController
     end
   end
 
+  def roomMotion
+    device = Device.find_by_id(2)
+    if device
+      device.state += 1
+      device.save
+      render json: device
+    end
+  end
+
+  def room
+    device = Device.find_by_id(2)
+    if device
+      render json: device
+    else
+      render json: { error: 'Cannot read device state' }, status: 400
+    end
+  end
+
   def frontMotion
     device = Device.find_by_id(1)
     if device
       device.state += 1
       device.save
+      render json: device
     end
   end
 
